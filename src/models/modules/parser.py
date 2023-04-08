@@ -1,6 +1,7 @@
 import argparse
 from pathlib import Path
 
+
 def run_parser():
     parser = argparse.ArgumentParser(
         prog = "NOCC Estimate Tool",

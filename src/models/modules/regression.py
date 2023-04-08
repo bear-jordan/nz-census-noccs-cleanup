@@ -1,6 +1,8 @@
 import pickle
+
 from modules.utils.config import MODEL_FILEPATH, ENCODER_FILEPATH 
 from modules.utils.clean import clean
+
 
 def logistic_regression(data):
     X = clean(data)

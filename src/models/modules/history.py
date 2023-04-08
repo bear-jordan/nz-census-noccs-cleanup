@@ -1,7 +1,8 @@
 import re
 from datetime import date
-import pandas as pd
+
 from modules.utils.config import HISTORY_FILEPATH
+
 
 def create_history_filter(data) -> list:
     history = pd.read_csv(HISTORY_FILEPATH)
@@ -9,6 +10,7 @@ def create_history_filter(data) -> list:
     add_to_history(data.loc[~filter, "Response Number"])
 
     return filter
+
 
 def add_to_history(data) -> None:
     history = pd.read_csv(HISTORY_FILEPATH)

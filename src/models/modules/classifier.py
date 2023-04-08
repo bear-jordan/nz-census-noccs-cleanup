@@ -1,5 +1,16 @@
+import pandas as pd
+import re
+
 from modules.utils.config import EXPRESSIONS
-from modules.utils.match import test_possible_match 
+
+
+def test_possible_match(expression, notes) -> bool:
+    matches = re.search(expression, notes)
+    if matches is None:
+        return False
+    else:
+        return True 
+
 
 def build_filter(data, matches):
     data["Found.In"] = matches
@@ -12,6 +23,7 @@ def build_filter(data, matches):
     data.drop(columns=["Found.In"], inplace=True)
 
     return (oneFilter | twoFilter | fourFilter | fiveFilter | sixFilter | sevenFilter)
+
 
 
 def classify(data):
@@ -34,4 +46,3 @@ def classify(data):
     data.loc[filter, "CONFIDENCE"] = "High"
 
     return data
-

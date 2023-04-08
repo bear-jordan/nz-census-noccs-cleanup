@@ -11,15 +11,15 @@ TARGET = "Number of Individual Forms Received"
 FILEPATH = "../../data/external/noccs-testing.csv"
 EXPRESSION_1 = re.compile(r"confirm(ed|s)?( with the \w+)?( only)?( there are| that| that there are| there were)?( only)?( occupancy of)? x?(?P<number>\d+|one|two|three|four|five|six|seven|eight|nine)")
 EXPRESSION_2 = re.compile(r"(confirmed) (only )?x?(?P<number>[0-9]+|one|two|three|four|five|six|seven|eight|nine) (occupant|people|participants|ppl|residents)?")
-EXPRESSION_4 = re.compile(r"(only )?x?(?P<number>[0-9]+|one|two|three|four|five|six|seven|eight|nine) (occupant|people|participants|ppl|residents)? (here )?(in dwelling|at dwelling|on census|on March|liv)")
-EXPRESSION_5 = re.compile(r"23 (confirmed )?only x?(?P<number>[0-9]+|one|two|three|four|five|six|seven|eight|nine)")
-EXPRESSION_6 = re.compile(r"(confirmed )?only x?(?P<number>[0-9]+|one|two|three|four|five|six|seven|eight|nine) (people )?not")
-EXPRESSION_7 = re.compile(r"away on census")
+EXPRESSION_3 = re.compile(r"(only )?x?(?P<number>[0-9]+|one|two|three|four|five|six|seven|eight|nine) (occupant|people|participants|ppl|residents)? (here )?(in dwelling|at dwelling|on census|on March|liv)")
+EXPRESSION_4 = re.compile(r"23 (confirmed )?only x?(?P<number>[0-9]+|one|two|three|four|five|six|seven|eight|nine)")
+EXPRESSION_5 = re.compile(r"(confirmed )?only x?(?P<number>[0-9]+|one|two|three|four|five|six|seven|eight|nine) (people )?not")
+EXPRESSION_6 = re.compile(r"away on census")
 EXPRESSIONS = {
-    "1": {"exp": EXPRESSION_1, "score": 1},
-    "2": {"exp": EXPRESSION_2, "score": 5},
-    "4": {"exp": EXPRESSION_4, "score": 1},
-    "5": {"exp": EXPRESSION_5, "score": 1},
-    "6": {"exp": EXPRESSION_6, "score": 1},
-    "7": {"exp": EXPRESSION_7, "score": 1}
+    "1": {"exp": EXPRESSION_1},
+    "2": {"exp": EXPRESSION_2},
+    "3": {"exp": EXPRESSION_3},
+    "4": {"exp": EXPRESSION_4},
+    "5": {"exp": EXPRESSION_5},
+    "6": {"exp": EXPRESSION_5}
 }
