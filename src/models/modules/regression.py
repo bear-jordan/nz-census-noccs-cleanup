@@ -1,4 +1,5 @@
 import pickle
+import pandas as pd
 
 from modules.config import MODEL_FILEPATH, ENCODER_FILEPATH 
 from modules.clean import clean

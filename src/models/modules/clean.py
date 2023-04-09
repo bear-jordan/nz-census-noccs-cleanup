@@ -1,10 +1,11 @@
 import re
 import pickle
+import pandas as pd
 
 from modules.config import VECTORIZER_FILEPATH 
 
 
-def clean(data) -> csr_matrix:
+def clean(data):
     """
     Clean and vectorize the text data in the `data` DataFrame using N-grams.
     Return a sparse matrix containing the vectorized text data.
