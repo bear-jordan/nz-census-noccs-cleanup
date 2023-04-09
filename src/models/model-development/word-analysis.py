@@ -1,5 +1,5 @@
 from collections import Counter
-from utils.config import *
+from modules.config import *
 import pandas as pd
 
 def main():

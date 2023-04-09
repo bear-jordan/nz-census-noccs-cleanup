@@ -1,10 +1,14 @@
 import pickle
 
-from modules.utils.config import MODEL_FILEPATH, ENCODER_FILEPATH 
-from modules.utils.clean import clean
+from modules.config import MODEL_FILEPATH, ENCODER_FILEPATH 
+from modules.clean import clean
 
 
-def logistic_regression(data):
+def logistic_regression(data) -> pd.DataFrame:
+    """
+    Apply the logistic regression model to the cleaned text data in the `data` DataFrame to predict the level of confidence that each response is a match.
+    Return the `data` DataFrame with the `CONFIDENCE` column updated with the model predictions.
+    """
     X = clean(data)
     model = pickle.load(open(MODEL_FILEPATH, 'rb'))
     predictions = model.predict(X)

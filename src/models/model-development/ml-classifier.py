@@ -35,7 +35,7 @@ def main():
         for minRange in range(maxRange):
             X, y = load_data(minRange, maxRange)
             result = tune(X, y)
-            with open("./results.txt", "w+") as file:
+            with open("./results.txt", "a+") as file:
                 title = f" ngram({minRange}, {maxRange}) ".center(20, "=")
                 file.writelines([title, result])
 
