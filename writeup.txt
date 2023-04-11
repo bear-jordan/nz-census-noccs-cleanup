@@ -1,9 +1,0 @@
-The NOCC Estimate Tool is a powerful and efficient command-line tool for estimating changes in the number of occupants in residential dwellings based on survey responses. It uses a combination of natural language processing, machine learning, and regular expressions to classify survey responses as high, medium, or low confidence, and rank them based on their estimated level of confidence.
-
-The tool takes as input a CSV file containing survey responses, and analyzes the contents of the Notes and Notes2 columns using natural language processing techniques to extract relevant text data. It then uses a set of pre-defined regular expressions to identify high confidence labels in the survey responses, and applies a logistic regression model to predict the level of confidence for each response.
-
-The NOCC Estimate Tool is designed to solve a common problem in the real estate industry, where changes in the number of occupants can have significant implications for property values, taxes, and other factors. By analyzing survey responses and estimating the level of confidence that they represent a change in the number of occupants, the NOCC Estimate Tool provides a way to quickly and easily identify responses that require further investigation or action.
-
-The tool is highly accurate and reliable, thanks to its use of natural language processing, machine learning, and regular expressions. It is also easy to use and integrate into existing workflows, thanks to its command-line interface and support for standard CSV file formats.
-
-The NOCC Estimate Tool is an ideal choice for real estate professionals, property managers, and others who need to quickly and accurately estimate changes in the number of occupants in residential dwellings. Its combination of advanced technologies and ease of use make it a valuable addition to any data science portfolio.
