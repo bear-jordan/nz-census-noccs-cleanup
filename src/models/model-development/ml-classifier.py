@@ -5,9 +5,10 @@ from sklearn.svm import SVC
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import precision_score, make_scorer
-from utils.config import FILEPATH
-from utils.tpp import run_tpp
-from utils.load import load_data
+
+from modules.config import FILEPATH
+from modules.clean import run_tpp
+from modules.load import load_data
 
 
 def tune(X, y):
@@ -34,7 +35,7 @@ def main():
         for minRange in range(maxRange):
             X, y = load_data(minRange, maxRange)
             result = tune(X, y)
-            with open("./results.txt", "w+") as file:
+            with open("./results.txt", "a+") as file:
                 title = f" ngram({minRange}, {maxRange}) ".center(20, "=")
                 file.writelines([title, result])
 

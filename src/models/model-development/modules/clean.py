@@ -1,6 +1,7 @@
+import re
 import pickle
-from models.utils.config import VECTORIZER_FILEPATH 
-from models.utils.tpp import run_tpp
+
+from modules.config import VECTORIZER_FILEPATH 
 
 
 def clean(data):
@@ -20,3 +21,21 @@ def clean(data):
     X = vectorizer.transform(X)
 
     return X
+
+
+def preprocess(text):
+    text = text.lower() 
+    text = text.strip()  
+    text = re.sub('\s+', ' ', text)  
+    text = re.sub(r'[^\w\s]', '', str(text).lower().strip())
+    text = re.sub(r'\d','#',text) 
+    text = re.sub(r' (one|two|three|four|five|six|seven|eight|nine)',' #',text) 
+    text = re.sub(r'\s+',' ',text) 
+    
+    return text
+
+
+def run_tpp(data):
+    data["CleanText"] = data["AllText"].apply(lambda x: preprocess(str(x)))
+    
+    return data

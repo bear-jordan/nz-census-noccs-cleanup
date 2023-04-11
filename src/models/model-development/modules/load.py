@@ -1,9 +1,11 @@
-from utils.config import FILEPATH
-from utils.tpp import run_tpp
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import LabelEncoder 
 import pickle
+
+from modules.config import FILEPATH
+from modules.clean import run_tpp
+
 
 def load_data(minNgram, maxNgram):
     # Load the dataset
